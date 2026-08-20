@@ -1,0 +1,61 @@
+<!-- npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MSEUF-CI Election System</title>
+  <link href="./dist/output.css" rel="stylesheet">
+</head>
+<body class="min-h-screen bg-black text-white font-sans antialiased">
+
+  <div 
+    class="relative min-h-screen w-full bg-cover bg-center flex flex-col justify-between p-6 md:p-12 overflow-hidden"
+    style="background-image: url('image/bg.jpg');"
+  >
+
+    <div class="absolute inset-0 bg-red-850/40 bg-black/10 pointer-events-none"></div>
+
+    <div class="relative z-10 flex flex-col md:flex-row justify-between items-start w-full gap-6">
+      
+      <div class="ml-10 w-78 sm:w-78 md:w-74 shrink-0">
+        <img 
+          src="image/logo.png" 
+          alt="School Logo" 
+          class=" w-full h-auto object-contain drop-shadow-2xl"
+        />
+
+        
+      </div>
+
+    <div class="max-w-xl text-left">
+  <h1 class="pt-3 pr-4 sm:pr-16 text-[32px] sm:text-[40px] md:text-[44px] font-bold leading-tight tracking-wide text-white font-serif drop-shadow-md">
+    Web Based School Election System with Digital Image Based Processing and <span class="whitespace-nowrap">Real-Time</span> Analytical Report
+  </h1>
+</div>
+    </div>
+
+   <div class="relative z-10 flex flex-col md:flex-row items-center justify-start w-full gap-4 md:gap-12 pt-10 pb-6 md:pb-32">
+
+  <a 
+    href="javascript:void(0)" 
+    onclick="window.location.href='signin.html'"
+    class="w-full md:w-[320px] bg-red-950/90 hover:bg-red-900 text-white font-medium text-lg py-3.5 px-6 rounded-2xl border border-red-800/40 shadow-xl transition flex items-center justify-center gap-2"
+  >
+    <span class="text-xl md:text-2xl font-serif">Sign In</span>
+  </a>
+
+  <a 
+    href="javascript:void(0)" 
+    onclick="window.location.href='dashboard.html'" 
+    class="w-full md:w-[320px] bg-red-950/90 hover:bg-red-900 text-white font-medium text-lg py-3.5 px-6 rounded-2xl border border-red-800/40 shadow-xl transition flex items-center justify-center gap-2"
+  >
+    <span class="text-xl md:text-2xl font-serif">Live Dash Board</span>
+  </a>
+
+</div>
+
+  </div>
+
+</body>
+</html>
