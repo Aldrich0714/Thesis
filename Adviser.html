@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Adviser Dashboard MSEUF Election System</title>
+  <link href="./dist/output.css" rel="stylesheet">
+</head>
+
+<!-- Pinalitan ang overflow-hidden ng overflow-y-auto para nakakapag-scroll ang buong mobile page -->
+<body class="min-h-screen w-full bg-[#8f0000] text-gray-800 font-sans antialiased flex flex-col overflow-y-auto">
+
+  <!-- HEADER -->
+ <header class="sticky top-0 z-50 w-full bg-[#8f0000] border-b border-[#710000] py-5 px-3 flex items-center gap-3 shadow-md">
+    <a href="Adviserlogin.html" class="text-[#efefef] hover:opacity-80 transition">
+     <svg xmlns="http://www.w3.org/2000/svg"width="40" height="38" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19-7-7 7-7"></path><path d="M19 12H5"></path></svg>
+    </a>
+    <div class="w-11 h-11 shrink-0 overflow-hidden rounded-full">
+  <img src="image/logo.png" alt="User Profile" class="w-full h-full object-cover">
+</div>
+    <div class="flex flex-col">
+      <h2 class="text-[23px] font-serif font-bold text-[#efefef] leading-none">Adviser Dashboard</h2>
+    </div>
+  </header>
+
+  <!-- MAIN WRAPPER (flex-col kapag mobile, flex-row kapag desktop) -->
+  <main class="w-full max-w-[1400px] mx-auto flex flex-col md:flex-row gap-6 p-3  p-6 min-h-screen pb-16">
+
+    <!-- 1. KALIWANG CONTAINER (Form & Table) - order-1 (UNA sa mobile) -->
+    <div class=" w-full min-w-0 md:flex-[2.5] bg-[#efefef rounded-2xl sm:rounded-3xl shadow-2xl flex flex-col border border-[#efefef] order-1">
+      
+     
+<nav class="sticky top-0 z-30 w-full bg-[#efefef] py-3 px-3 sm:px-6 border-b border-[#efefef] flex items-center justify-center gap-4 sm:gap-8 shadow-md rounded-t-2xl sm:rounded-t-3xl overflow-x-auto whitespace-nowrap [ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+  
+  <!-- Candidate Management -->
+  <a href="Adviser.html" class="flex items-center gap-1.5 sm:gap-2 pb-1.5 border-b-2 border-[#8f0000] shrink-0">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4 sm:w-5 sm:h-5 text-red-900 shrink-0">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M18 7.5v3m0 0v3m0-3h3m-3 0h-3m-2.25-4.125a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0ZM3 19.235v-.11a6.375 6.375 0 0 1 12.75 0v.109A12.318 12.318 0 0 1 9.374 21c-2.331 0-4.512-.645-6.374-1.766Z" />
+    </svg>
+    <span class="font-serif">Candidate Management</span>
+  </a>
+
+  <a href="elecmanagement.html" class="flex items-center gap-1.5 sm:gap-2 text-gray-700 hover:text-black font-serif text-xs sm:text-base shrink-0 pb-1.5 pr-4 sm:pr-0">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4 sm:w-5 sm:h-5 shrink-0">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+    </svg>
+    <span class="font-serif">Election Management</span>
+  </a>
+
+</nav>
+      <!-- INNER FORM & TABLE CONTENT -->
+      <div class="bg-[#efefef] p-4 sm:p-8 flex flex-col gap-8 w-full min-w-0">
+
+        <!-- Form Section -->
+        <div class="w-full">
+          <h2 class="text-xl sm:text-2xl font-bold text-gray-950 mb-4 font-sans">Add New Candidate</h2>
+          <div class="bg-[#efefef] p-4 sm:p-6 rounded-2xl border border-gray-300 w-full">
+            <form id="addCandidateForm" class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-4">
+              <div>
+                <label for="full_name" class="block text-[15px] font-semibold text-gray-800 mb-1">Full Name:</label>
+                <input type="text" id="full_name" name="full_name" placeholder="Enter Candidate name" required class="w-full bg-[#e8e2e2] border border-gray-400 rounded-lg py-1.5 px-3 text-sm focus:outline-none focus:border-red-900 text-gray-900"/>
+              </div>
+
+              <div>
+                <label for="course" class="block text-[15px] font-semibold text-gray-800 mb-1">Course:</label>
+                <input type="text" id="course" name="course" placeholder="Ex. BSCS" required class="w-full bg-[#e8e2e2] border border-gray-400 rounded-lg py-1.5 px-3 text-sm focus:outline-none focus:border-red-900 text-gray-900"/>
+              </div>
+
+              <div>
+                <label for="grade_level" class="block text-[15px] font-semibold text-gray-800 mb-1">Grade Level:</label>
+                <select id="grade_level" name="grade_level" required class="w-full bg-[#e8e2e2] border border-gray-400 rounded-lg py-1.5 px-3 text-sm focus:outline-none focus:border-red-900 text-gray-900">
+                  <option value="" disabled selected>Select grade Level</option>
+                  <option value="1st Year">1st Year</option>
+                  <option value="2nd Year">2nd Year</option>
+                  <option value="3rd Year">3rd Year</option>
+                  <option value="4th Year">4th Year</option>
+                </select>
+              </div>
+
+              <div>
+                <label for="party_list" class="block text-[15px] font-semibold text-gray-800 mb-1">Party List :</label>
+                <input type="text" id="party_list" name="party_list" placeholder="Ex. Maroon" required class="w-full bg-[#e8e2e2] border border-gray-400 rounded-lg py-1.5 px-3 text-sm focus:outline-none focus:border-red-900 text-gray-900"/>
+              </div>
+
+              <div>
+                <label for="position" class="block text-[15px] font-semibold text-gray-800 mb-1">Position:</label>
+                <select id="position" name="position" required class="w-full bg-[#efefef] border border-gray-400 rounded-lg py-1.5 px-3 text-sm focus:outline-none focus:border-red-900 text-gray-900">
+                  <option value="" disabled selected>Select Position</option>
+                  <option value="President">President</option>
+                  <option value="Vice President">Vice President</option>
+                  <option value="Secretary">Secretary</option>
+                </select>
+              </div>
+
+              <div class="flex items-end">
+                <button type="submit" id="submitBtn" class="w-full bg-[#8f0000] hover:bg-[#efefef] text-[#efefef] hover:text-[#710000] font-bold py-2 px-4 rounded-lg shadow transition active:scale-95 disabled:opacity-50">
+                  Add Candidate
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <!-- Table Section -->
+        <div class="w-full min-w-0">
+          <h2 class="text-xl sm:text-[25px] font-bold text-gray-950 mb-4 font-sans">Registered Candidate</h2>
+          
+          <div class="w-full max-w-full min-h-[300px] max-h-[500px] overflow-auto bg-[#efefef] rounded-2xl border border-red-900/30 shadow-sm relative">
+            <table class="w-full text-left border-collapse min-w-[550px]">
+              <thead class="bg-[#8f0000] text-[#efefef] sticky top-0 z-10">
+                <tr>
+                  <th class="py-3 px-4 font-serif text-[15px] whitespace-nowrap bg-[#8f0000]">Full Name</th>
+                  <th class="py-3 px-4 font-serif text-[15px] whitespace-nowrap bg-[#8f0000]">Course</th>
+                  <th class="py-3 px-4 font-serif text-[15px] whitespace-nowrap bg-[#8f0000]">Grade Level</th>
+                  <th class="py-3 px-4 font-serif text-[15px] whitespace-nowrap bg-[#8f0000]">Party List</th>
+                  <th class="py-3 px-4 font-serif text-[15px] whitespace-nowrap bg-[#8f0000]">Action</th>
+                </tr>
+              </thead>
+              
+              <tbody id="candidatesTableBody" class="text-sm text-gray-800">
+                <!-- PRESIDENT -->
+                <tr class="bg-[#efefef] text-black font-serif font-bold text-xs">
+                  <td colspan="5" class="py-2.5 px-4 text-[16px]">President:</td>
+                </tr>
+                <tr class="bg-[#8f0000] text-[#efefef] border-b border-gray-200">
+                  <td class="py-2.5 px-4 font-serif text-[15px] whitespace-nowrap">Juan Cruz</td>
+                  <td class="py-2.5 px-4 font-serif text-[15px] whitespace-nowrap">BSCS</td>
+                  <td class="py-2.5 px-4 font-serif text-[15px] whitespace-nowrap">3</td>
+                  <td class="py-2.5 px-4 font-serif text-[15px] whitespace-nowrap">Maroon</td>
+                  <td class="py-2.5 px-4">
+                    <button class="bg-[#8f0000] text-[#efefef] p-1.5 rounded hover:bg-[#710000] transition">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10" />
+                      </svg>
+                    </button>
+                  </td>
+                </tr>
+                <tr class="bg-[#efefef] border-b border-gray-200">
+                  <td class="py-2.5 px-4 font-serif text-[15px] whitespace-nowrap">Juan Cruz</td>
+                  <td class="py-2.5 px-4 font-serif text-[15px] whitespace-nowrap">BSCS</td>
+                  <td class="py-2.5 px-4 font-serif text-[15px] whitespace-nowrap">3</td>
+                  <td class="py-2.5 px-4 font-serif text-[15px] whitespace-nowrap">White</td>
+                  <td class="py-2.5 px-4">
+                    <button class="bg-[#8f0000] text-[#efefef] p-1.5 rounded hover:bg-[#710000] transition">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10" />
+                      </svg>
+                    </button>
+                  </td>
+                </tr>
+
+                <!-- VICE PRESIDENT -->
+                <tr class="bg-[#efefef] text-black font-serif font-bold text-xs">
+                  <td colspan="5" class="py-2.5 px-4 text-[16px]">Vice President:</td>
+                </tr>
+                <tr class="bg-[#8f0000] text-[#efefef] border-b border-gray-200">
+                  <td class="py-2.5 px-4 font-serif text-[15px] whitespace-nowrap">Juan Cruz</td>
+                  <td class="py-2.5 px-4 font-serif text-[15px] whitespace-nowrap">BSCS</td>
+                  <td class="py-2.5 px-4 font-serif text-[15px] whitespace-nowrap">3</td>
+                  <td class="py-2.5 px-4 font-serif text-[15px] whitespace-nowrap">Maroon</td>
+                  <td class="py-2.5 px-4">
+                    <button class="bg-[#8f0000] text-[#efefef] p-1.5 rounded hover:bg-[#710000] transition">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10" />
+                      </svg>
+                    </button>
+                  </td>
+                </tr>
+                <tr class="bg-[#efefef] border-b border-gray-200">
+                  <td class="py-2.5 px-4 font-serif text-[15px] whitespace-nowrap">Juan Cruz</td>
+                  <td class="py-2.5 px-4 font-serif text-[15px] whitespace-nowrap">BSCS</td>
+                  <td class="py-2.5 px-4 font-serif text-[15px] whitespace-nowrap">3</td>
+                  <td class="py-2.5 px-4 font-serif text-[15px] whitespace-nowrap">White</td>
+                  <td class="py-2.5 px-4">
+                    <button class="bg-[#8f0000] text-[#efefef] p-1.5 rounded hover:bg-[#710000] transition">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10" />
+                      </svg>
+                    </button>
+                  </td>
+                </tr>
+
+                <!-- SECRETARY -->
+                <tr class="bg-[#efefef] text-black font-serif font-bold text-xs">
+                  <td colspan="5" class="py-2.5 px-4 text-[16px]">Secretary:</td>
+                </tr>
+                <tr class="bg-[#8f0000] text-[#efefef] border-b border-gray-200">
+                  <td class="py-2.5 px-4 font-serif text-[15px] whitespace-nowrap">Juan Cruz</td>
+                  <td class="py-2.5 px-4 font-serif text-[15px] whitespace-nowrap">BSCS</td>
+                  <td class="py-2.5 px-4 font-serif text-[15px] whitespace-nowrap">3</td>
+                  <td class="py-2.5 px-4 font-serif text-[15px] whitespace-nowrap">Maroon</td>
+                  <td class="py-2.5 px-4">
+                    <button class="bg-[#8f0000] text-[#efefef] p-1.5 rounded hover:bg-[#710000] transition">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10" />
+                      </svg>
+                    </button>
+                  </td>
+                </tr>
+                <tr class="bg-[#efefef] border-b border-gray-200">
+                  <td class="py-2.5 px-4 font-serif text-[15px] whitespace-nowrap">Juan Cruz</td>
+                  <td class="py-2.5 px-4 font-serif text-[15px] whitespace-nowrap">BSCS</td>
+                  <td class="py-2.5 px-4 font-serif text-[15px] whitespace-nowrap">3</td>
+                  <td class="py-2.5 px-4 font-serif text-[15px] whitespace-nowrap">White</td>
+                  <td class="py-2.5 px-4">
+                    <button class="bg-[#8f0000] text-[#efefef] p-1.5 rounded hover:bg-[#710000] transition">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10" />
+                      </svg>
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 2. KANANG CONTAINER (LIVE RESULTS) - order-2 / md:order-last (Nasa BABA kapag Mobile) -->
+    <div class="w-full md:w-72 bg-[#efefef] rounded-2xl sm:rounded-3xl p-3.5 sm:p-5 shadow-2xl shrink-0 flex flex-col justify-between border border-white/20 order-2 md:order-last">
+      
+      <div class="space-y-3 sm:space-y-4">
+        <h3 class="text-[20px] sm:text-[25px] font-serif font-bold text-gray-950 mb-2 sm:mb-3">Live Results</h3>
+
+        <!-- PRESIDENT -->
+        <div class="position-section flex flex-col gap-1.5 w-full" data-position="President">
+        <div class="pl-2.5">
+          <h3 class="text-[25px] sm:text-[20px] font-serif font-bold text-gray-900 leading-tight">President</h3>
+        </div>
+
+        <div class="candidates-list flex flex-col gap-2 pl-3 w-full">
+          <!-- Candidate 1 -->
+          <div class="candidate-row flex flex-col w-full" data-candidate-id="1">
+            <div class="flex justify-end items-center text-xs sm:text-sm font-serif font-semibold text-gray-700 leading-none mb-0.5">
+              <span id="percent">0%</span>
+            </div>
+            <div class="w-full bg-gray-400/60 h-3 sm:h-3.5 rounded-full overflow-hidden shadow-inner">
+              <div id="bar" class="bg-[#8f0000] h-full rounded-full transition-all duration-500 ease-out w-0"></div>
+            </div>
+          </div>
+
+          <div class="mt-2 candidate-row flex flex-col w-full" data-candidate-id="2">
+            <div class="flex justify-end items-center text-xs sm:text-sm font-serif font-semibold text-gray-700 leading-none mb-0.5">
+              <span id="percent">0%</span>
+            </div>
+            <div class="w-full bg-gray-400/60 h-3 sm:h-3.5 rounded-full overflow-hidden shadow-inner">
+              <div id="bar" class="bg-[#8f0000] h-full rounded-full transition-all duration-500 ease-out w-0"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. VICE-PRESIDENT -->
+      <div class="position-section flex flex-col mt-2 gap-1.5 w-full" data-position="Vice-President">
+        <div class="pl-2.5">
+          <h3 class="text-[25px] sm:text-[20px] font-serif font-bold text-gray-900 leading-tight">Vice-President</h3>
+        </div>
+
+        <div class="candidates-list flex flex-col gap-2 pl-3 w-full">
+          <!-- Candidate 1 -->
+          <div class="candidate-row flex flex-col w-full" data-candidate-id="3">
+            <div class="flex justify-end items-center text-xs sm:text-sm font-serif font-semibold text-gray-700 leading-none mb-0.5">
+              <span id="percent">0%</span>
+            </div>
+            <div class="w-full bg-gray-400/60 h-3 sm:h-3.5 rounded-full overflow-hidden shadow-inner">
+              <div id="bar" class="bg-[#8f0000] h-full rounded-full transition-all duration-500 ease-out w-0"></div>
+            </div>
+          </div>
+
+          <!-- Candidate 2 -->
+          <div class="candidate-row mt-2 flex flex-col w-full" data-candidate-id="4">
+            <div class="flex justify-end items-center text-xs sm:text-sm font-serif font-semibold text-gray-700 leading-none mb-0.5">
+              <span id="percent">0%</span>
+            </div>
+            <div class="w-full bg-gray-400/60 h-3 sm:h-3.5 rounded-full overflow-hidden shadow-inner">
+              <div id="bar" class="bg-[#8f0000] h-full rounded-full transition-all duration-500 ease-out w-0"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. SECRETARY -->
+      <div class="position-section mt-2 flex flex-col gap-1.5 w-full" data-position="Secretary">
+        <div class=" pl-2.5">
+          <h3 class="text-[25px] sm:text-[20px] font-serif font-bold text-gray-900 leading-tight">Secretary</h3>
+        </div>
+
+        <div class="candidates-list flex flex-col gap-2 pl-3 w-full">
+          <!-- Candidate 1 -->
+          <div class="candidate-row flex flex-col w-full" data-candidate-id="5">
+            <div class="flex justify-end items-center text-xs sm:text-sm font-serif font-semibold text-gray-700 leading-none mb-0.5">
+              <span id="percent">0%</span>
+            </div>
+            <div class="w-full bg-gray-400/60 h-3 sm:h-3.5 rounded-full overflow-hidden shadow-inner">
+              <div id="bar" class="bg-[#8f0000] h-full rounded-full transition-all duration-500 ease-out w-0"></div>
+            </div>
+          </div>
+
+          <!-- Candidate 2 -->
+          <div class="candidate-row mt-2 flex flex-col w-full" data-candidate-id="6">
+            <div class="flex justify-end items-center text-xs sm:text-sm font-serif font-semibold text-gray-700 leading-none mb-0.5">
+              <span id="percent">0%</span>
+            </div>
+            <div class="w-full bg-gray-400/60 h-3 sm:h-3.5 rounded-full overflow-hidden shadow-inner">
+              <div id="bar" class="bg-[#8f0000] h-full rounded-full transition-all duration-500 ease-out w-0"></div>
+            </div>
+          </div>
+          <div class="candidate-row mt-2 flex flex-col w-full" data-candidate-id="6">
+            <div class="flex justify-end items-center text-xs sm:text-sm font-serif font-semibold text-gray-700 leading-none mb-0.5">
+              <span id="percent">0%</span>
+            </div>
+            <div class="w-full bg-gray-400/60 h-3 sm:h-3.5 rounded-full overflow-hidden shadow-inner">
+              <div id="bar" class="bg-[#8f0000] h-full rounded-full transition-all duration-500 ease-out w-0"></div>
+            </div>
+          </div>
+          <div class="candidate-row mt-2 flex flex-col w-full" data-candidate-id="6">
+            <div class="flex justify-end items-center text-xs sm:text-sm font-serif font-semibold text-gray-700 leading-none mb-0.5">
+              <span id="percent">0%</span>
+            </div>
+            <div class="w-full bg-gray-400/60 h-3 sm:h-3.5 rounded-full overflow-hidden shadow-inner">
+              <div id="bar" class="bg-[#8f0000] h-full rounded-full transition-all duration-500 ease-out w-0"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+
+      <!-- STATUS FOOTER -->
+      <div class="border-t border-gray-400 pt-3 sm:pt-4 mt-4">
+        <h3 class="text-[15px] sm:text-[17px] font-serif font-bold text-gray-950 mb-1">Status</h3>
+        <div class="flex justify-between text-[13px] sm:text-[15px] text-gray-800 font-medium py-0.5">
+          <span>No.Voters:</span>
+          <span id="No.voters" class="truncate max-w-[120px] text-right">Database not found</span>
+        </div>
+        <div class="flex justify-between text-[13px] sm:text-[15px] text-gray-800 font-medium py-0.5">
+          <span>Voted :</span>
+          <span id="Voted" class="truncate max-w-[120px] text-right">Database not found</span>
+        </div>
+        <div class="flex justify-between text-[13px] sm:text-[15px] text-gray-800 font-medium py-0.5">
+          <span>No.Candidate:</span>
+          <span id="No.candidates" class="truncate max-w-[120px] text-right">Database not found</span>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+</body>
+</html>
