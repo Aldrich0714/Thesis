@@ -34,15 +34,15 @@
 <nav class="sticky top-0 z-30 w-full bg-[#efefef] py-3 px-3 sm:px-6 border-b border-[#efefef] flex items-center justify-center gap-4 sm:gap-8 shadow-md rounded-t-2xl sm:rounded-t-3xl overflow-x-auto whitespace-nowrap [ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
   
   <!-- Candidate Management -->
-  <a href="Adviser.html" class="flex items-center gap-1.5 sm:gap-2 pb-1.5 border-b-2 border-[#8f0000] shrink-0">
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4 sm:w-5 sm:h-5 text-red-900 shrink-0">
+  <a href="Adviser.html" class="flex items-center gap-1.5 sm:gap-2 text-gray-700 hover:text-black font-serif text-xs sm:text-base shrink-0 pb-1.5 pr-4 sm:pr-0"">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4 sm:w-5 sm:h-5 text-[#8f0000] shrink-0">
       <path stroke-linecap="round" stroke-linejoin="round" d="M18 7.5v3m0 0v3m0-3h3m-3 0h-3m-2.25-4.125a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0ZM3 19.235v-.11a6.375 6.375 0 0 1 12.75 0v.109A12.318 12.318 0 0 1 9.374 21c-2.331 0-4.512-.645-6.374-1.766Z" />
     </svg>
     <span class="font-serif">Candidate Management</span>
   </a>
 
   <a href="elecmanagement.html" class="flex items-center gap-1.5 sm:gap-2 text-gray-700 hover:text-black font-serif text-xs sm:text-base shrink-0 pb-1.5 pr-4 sm:pr-0">
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4 sm:w-5 sm:h-5 shrink-0">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4 sm:w-5 sm:h-5 text-[#8f0000] shrink-0">
       <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
     </svg>
     <span class="font-serif">Election Management</span>
@@ -219,133 +219,132 @@
       </div>
     </div>
 
-    <!-- 2. KANANG CONTAINER (LIVE RESULTS) - order-2 / md:order-last (Nasa BABA kapag Mobile) -->
-    <div class="w-full md:w-72 bg-[#efefef] rounded-2xl sm:rounded-3xl p-3.5 sm:p-5 shadow-2xl shrink-0 flex flex-col justify-between border border-white/20 order-2 md:order-last">
-      
-      <div class="space-y-3 sm:space-y-4">
-        <h3 class="text-[20px] sm:text-[25px] font-serif font-bold text-gray-950 mb-2 sm:mb-3">Live Results</h3>
+   <!-- 2. KANANG CONTAINER (LIVE RESULTS) -->
+<div class="w-full md:w-72 bg-[#efefef] rounded-2xl sm:rounded-3xl p-3.5 sm:p-5 shadow-2xl shrink-0 flex flex-col border border-white/20 order-2 md:order-last md:sticky md:top-24 self-start">
+  
+  <div class="space-y-3 sm:space-y-4">
+    <h3 class="text-[20px] sm:text-[25px] font-serif font-bold text-gray-950 mb-2 sm:mb-3">Live Results</h3>
 
-        <!-- PRESIDENT -->
-        <div class="position-section flex flex-col gap-1.5 w-full" data-position="President">
-        <div class="pl-2.5">
-          <h3 class="text-[25px] sm:text-[20px] font-serif font-bold text-gray-900 leading-tight">President</h3>
+    <!-- PRESIDENT -->
+    <div class="position-section flex flex-col gap-1.5 w-full" data-position="President">
+      <div class="pl-2.5">
+        <h3 class="text-[18px] sm:text-[20px] font-serif font-bold text-gray-900 leading-tight">President</h3>
+      </div>
+
+      <div class="candidates-list flex flex-col gap-2 pl-3 w-full">
+        <!-- Candidate 1 -->
+        <div class="candidate-row flex flex-col w-full" data-candidate-id="1">
+          <div class="flex justify-end items-center text-xs sm:text-sm font-serif font-semibold text-gray-700 leading-none mb-0.5">
+            <span id="percent-1">0%</span>
+          </div>
+          <div class="w-full bg-gray-400/60 h-3 sm:h-3.5 rounded-full overflow-hidden shadow-inner">
+            <div id="bar-1" class="bg-[#8f0000] h-full rounded-full transition-all duration-500 ease-out w-0"></div>
+          </div>
         </div>
 
-        <div class="candidates-list flex flex-col gap-2 pl-3 w-full">
-          <!-- Candidate 1 -->
-          <div class="candidate-row flex flex-col w-full" data-candidate-id="1">
-            <div class="flex justify-end items-center text-xs sm:text-sm font-serif font-semibold text-gray-700 leading-none mb-0.5">
-              <span id="percent">0%</span>
-            </div>
-            <div class="w-full bg-gray-400/60 h-3 sm:h-3.5 rounded-full overflow-hidden shadow-inner">
-              <div id="bar" class="bg-[#8f0000] h-full rounded-full transition-all duration-500 ease-out w-0"></div>
-            </div>
+        <!-- Candidate 2 -->
+        <div class="candidate-row flex flex-col w-full" data-candidate-id="2">
+          <div class="flex justify-end items-center text-xs sm:text-sm font-serif font-semibold text-gray-700 leading-none mb-0.5">
+            <span id="percent-2">0%</span>
           </div>
-
-          <div class="mt-2 candidate-row flex flex-col w-full" data-candidate-id="2">
-            <div class="flex justify-end items-center text-xs sm:text-sm font-serif font-semibold text-gray-700 leading-none mb-0.5">
-              <span id="percent">0%</span>
-            </div>
-            <div class="w-full bg-gray-400/60 h-3 sm:h-3.5 rounded-full overflow-hidden shadow-inner">
-              <div id="bar" class="bg-[#8f0000] h-full rounded-full transition-all duration-500 ease-out w-0"></div>
-            </div>
+          <div class="w-full bg-gray-400/60 h-3 sm:h-3.5 rounded-full overflow-hidden shadow-inner">
+            <div id="bar-2" class="bg-[#8f0000] h-full rounded-full transition-all duration-500 ease-out w-0"></div>
           </div>
         </div>
       </div>
-
-      <!-- 2. VICE-PRESIDENT -->
-      <div class="position-section flex flex-col mt-2 gap-1.5 w-full" data-position="Vice-President">
-        <div class="pl-2.5">
-          <h3 class="text-[25px] sm:text-[20px] font-serif font-bold text-gray-900 leading-tight">Vice-President</h3>
-        </div>
-
-        <div class="candidates-list flex flex-col gap-2 pl-3 w-full">
-          <!-- Candidate 1 -->
-          <div class="candidate-row flex flex-col w-full" data-candidate-id="3">
-            <div class="flex justify-end items-center text-xs sm:text-sm font-serif font-semibold text-gray-700 leading-none mb-0.5">
-              <span id="percent">0%</span>
-            </div>
-            <div class="w-full bg-gray-400/60 h-3 sm:h-3.5 rounded-full overflow-hidden shadow-inner">
-              <div id="bar" class="bg-[#8f0000] h-full rounded-full transition-all duration-500 ease-out w-0"></div>
-            </div>
-          </div>
-
-          <!-- Candidate 2 -->
-          <div class="candidate-row mt-2 flex flex-col w-full" data-candidate-id="4">
-            <div class="flex justify-end items-center text-xs sm:text-sm font-serif font-semibold text-gray-700 leading-none mb-0.5">
-              <span id="percent">0%</span>
-            </div>
-            <div class="w-full bg-gray-400/60 h-3 sm:h-3.5 rounded-full overflow-hidden shadow-inner">
-              <div id="bar" class="bg-[#8f0000] h-full rounded-full transition-all duration-500 ease-out w-0"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- 3. SECRETARY -->
-      <div class="position-section mt-2 flex flex-col gap-1.5 w-full" data-position="Secretary">
-        <div class=" pl-2.5">
-          <h3 class="text-[25px] sm:text-[20px] font-serif font-bold text-gray-900 leading-tight">Secretary</h3>
-        </div>
-
-        <div class="candidates-list flex flex-col gap-2 pl-3 w-full">
-          <!-- Candidate 1 -->
-          <div class="candidate-row flex flex-col w-full" data-candidate-id="5">
-            <div class="flex justify-end items-center text-xs sm:text-sm font-serif font-semibold text-gray-700 leading-none mb-0.5">
-              <span id="percent">0%</span>
-            </div>
-            <div class="w-full bg-gray-400/60 h-3 sm:h-3.5 rounded-full overflow-hidden shadow-inner">
-              <div id="bar" class="bg-[#8f0000] h-full rounded-full transition-all duration-500 ease-out w-0"></div>
-            </div>
-          </div>
-
-          <!-- Candidate 2 -->
-          <div class="candidate-row mt-2 flex flex-col w-full" data-candidate-id="6">
-            <div class="flex justify-end items-center text-xs sm:text-sm font-serif font-semibold text-gray-700 leading-none mb-0.5">
-              <span id="percent">0%</span>
-            </div>
-            <div class="w-full bg-gray-400/60 h-3 sm:h-3.5 rounded-full overflow-hidden shadow-inner">
-              <div id="bar" class="bg-[#8f0000] h-full rounded-full transition-all duration-500 ease-out w-0"></div>
-            </div>
-          </div>
-          <div class="candidate-row mt-2 flex flex-col w-full" data-candidate-id="6">
-            <div class="flex justify-end items-center text-xs sm:text-sm font-serif font-semibold text-gray-700 leading-none mb-0.5">
-              <span id="percent">0%</span>
-            </div>
-            <div class="w-full bg-gray-400/60 h-3 sm:h-3.5 rounded-full overflow-hidden shadow-inner">
-              <div id="bar" class="bg-[#8f0000] h-full rounded-full transition-all duration-500 ease-out w-0"></div>
-            </div>
-          </div>
-          <div class="candidate-row mt-2 flex flex-col w-full" data-candidate-id="6">
-            <div class="flex justify-end items-center text-xs sm:text-sm font-serif font-semibold text-gray-700 leading-none mb-0.5">
-              <span id="percent">0%</span>
-            </div>
-            <div class="w-full bg-gray-400/60 h-3 sm:h-3.5 rounded-full overflow-hidden shadow-inner">
-              <div id="bar" class="bg-[#8f0000] h-full rounded-full transition-all duration-500 ease-out w-0"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-      </div>
-
-      <!-- STATUS FOOTER -->
-      <div class="border-t border-gray-400 pt-3 sm:pt-4 mt-4">
-        <h3 class="text-[15px] sm:text-[17px] font-serif font-bold text-gray-950 mb-1">Status</h3>
-        <div class="flex justify-between text-[13px] sm:text-[15px] text-gray-800 font-medium py-0.5">
-          <span>No.Voters:</span>
-          <span id="No.voters" class="truncate max-w-[120px] text-right">Database not found</span>
-        </div>
-        <div class="flex justify-between text-[13px] sm:text-[15px] text-gray-800 font-medium py-0.5">
-          <span>Voted :</span>
-          <span id="Voted" class="truncate max-w-[120px] text-right">Database not found</span>
-        </div>
-        <div class="flex justify-between text-[13px] sm:text-[15px] text-gray-800 font-medium py-0.5">
-          <span>No.Candidate:</span>
-          <span id="No.candidates" class="truncate max-w-[120px] text-right">Database not found</span>
-        </div>
-      </div>
-
     </div>
+
+    <!-- VICE-PRESIDENT -->
+    <div class="position-section flex flex-col mt-2 gap-1.5 w-full" data-position="Vice-President">
+      <div class="pl-2.5">
+        <h3 class="text-[18px] sm:text-[20px] font-serif font-bold text-gray-900 leading-tight">Vice-President</h3>
+      </div>
+
+      <div class="candidates-list flex flex-col gap-2 pl-3 w-full">
+        <div class="candidate-row flex flex-col w-full" data-candidate-id="3">
+          <div class="flex justify-end items-center text-xs sm:text-sm font-serif font-semibold text-gray-700 leading-none mb-0.5">
+            <span id="percent-3">0%</span>
+          </div>
+          <div class="w-full bg-gray-400/60 h-3 sm:h-3.5 rounded-full overflow-hidden shadow-inner">
+            <div id="bar-3" class="bg-[#8f0000] h-full rounded-full transition-all duration-500 ease-out w-0"></div>
+          </div>
+        </div>
+
+        <div class="candidate-row flex flex-col w-full" data-candidate-id="4">
+          <div class="flex justify-end items-center text-xs sm:text-sm font-serif font-semibold text-gray-700 leading-none mb-0.5">
+            <span id="percent-4">0%</span>
+          </div>
+          <div class="w-full bg-gray-400/60 h-3 sm:h-3.5 rounded-full overflow-hidden shadow-inner">
+            <div id="bar-4" class="bg-[#8f0000] h-full rounded-full transition-all duration-500 ease-out w-0"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECRETARY -->
+    <div class="position-section mt-2 flex flex-col gap-1.5 w-full" data-position="Secretary">
+      <div class="pl-2.5">
+        <h3 class="text-[18px] sm:text-[20px] font-serif font-bold text-gray-900 leading-tight">Secretary</h3>
+      </div>
+
+      <div class="candidates-list flex flex-col gap-2 pl-3 w-full">
+        <div class="candidate-row flex flex-col w-full" data-candidate-id="5">
+          <div class="flex justify-end items-center text-xs sm:text-sm font-serif font-semibold text-gray-700 leading-none mb-0.5">
+            <span id="percent-5">0%</span>
+          </div>
+          <div class="w-full bg-gray-400/60 h-3 sm:h-3.5 rounded-full overflow-hidden shadow-inner">
+            <div id="bar-5" class="bg-[#8f0000] h-full rounded-full transition-all duration-500 ease-out w-0"></div>
+          </div>
+        </div>
+
+        <div class="candidate-row flex flex-col w-full" data-candidate-id="6">
+          <div class="flex justify-end items-center text-xs sm:text-sm font-serif font-semibold text-gray-700 leading-none mb-0.5">
+            <span id="percent-6">0%</span>
+          </div>
+          <div class="w-full bg-gray-400/60 h-3 sm:h-3.5 rounded-full overflow-hidden shadow-inner">
+            <div id="bar-6" class="bg-[#8f0000] h-full rounded-full transition-all duration-500 ease-out w-0"></div>
+          </div>
+        </div>
+        <div class="candidate-row flex flex-col w-full" data-candidate-id="6">
+          <div class="flex justify-end items-center text-xs sm:text-sm font-serif font-semibold text-gray-700 leading-none mb-0.5">
+            <span id="percent-6">0%</span>
+          </div>
+          <div class="w-full bg-gray-400/60 h-3 sm:h-3.5 rounded-full overflow-hidden shadow-inner">
+            <div id="bar-6" class="bg-[#8f0000] h-full rounded-full transition-all duration-500 ease-out w-0"></div>
+          </div>
+        </div>
+        <div class="candidate-row flex flex-col w-full" data-candidate-id="6">
+          <div class="flex justify-end items-center text-xs sm:text-sm font-serif font-semibold text-gray-700 leading-none mb-0.5">
+            <span id="percent-6">0%</span>
+          </div>
+          <div class="w-full bg-gray-400/60 h-3 sm:h-3.5 rounded-full overflow-hidden shadow-inner">
+            <div id="bar-6" class="bg-[#8f0000] h-full rounded-full transition-all duration-500 ease-out w-0"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- STATUS FOOTER -->
+  <div class="border-t border-gray-400 pt-3 sm:pt-4 mt-4">
+    <h3 class="text-[15px] sm:text-[17px] font-serif font-bold text-gray-950 mb-1">Status</h3>
+    <div class="flex justify-between text-[13px] sm:text-[15px] text-gray-800 font-medium py-0.5">
+      <span>No.Voters:</span>
+      <span id="No.voters" class="truncate max-w-[120px] text-right">Database not found</span>
+    </div>
+    <div class="flex justify-between text-[13px] sm:text-[15px] text-gray-800 font-medium py-0.5">
+      <span>Voted :</span>
+      <span id="Voted" class="truncate max-w-[120px] text-right">Database not found</span>
+    </div>
+    <div class="flex justify-between text-[13px] sm:text-[15px] text-gray-800 font-medium py-0.5">
+      <span>No.Candidate:</span>
+      <span id="No.candidates" class="truncate max-w-[120px] text-right">Database not found</span>
+    </div>
+  </div>
+  
+
+</div>
 
   </main>
 </body>

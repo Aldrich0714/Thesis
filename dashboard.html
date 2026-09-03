@@ -10,7 +10,7 @@
 
  <header class="sticky top-0 z-50 w-full bg-[#700000] border-b border-red-950/50 py-5 px-3 flex items-center gap-3 shadow-md">
   <div class="flex items-center gap-2 sm:gap-3">
-    <a href="index.html" class="text-white hover:opacity-80 transition">
+    <a href="MSEUF-CI_Election.html" class="text-white hover:opacity-80 transition">
       <svg xmlns="http://www.w3.org/2000/svg" width="40" height="38" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <path d="m12 19-7-7 7-7"></path>
         <path d="M19 12H5"></path>
@@ -27,11 +27,19 @@
   
   <main class="w-full flex-1 px-6 pt-4 pb-8 md:px-12 md:pt-5 md:pb-10 flex flex-col gap-4">
 
+      <!-- Election status banner: reflects election_status / names_masked from localStorage -->
+    <div id="statusBanner"
+      class="w-full rounded-xl px-4 py-2.5 font-serif font-semibold text-sm sm:text-base flex items-center gap-2 shadow-sm border transition-colors">
+      <span id="statusIcon">🔒</span>
+      <span id="statusBannerText">Voting in Progress (Names Hidden)</span>
+    </div>
+ 
     <div class="flex items-center justify-between gap-4 border-b border-gray-300 pb-2.5">
       <div class="flex items-center gap-3">
         <h2 class="text-[25px] sm:text-[20px] font-serif font-bold text-gray-950 leading-none">Live Results</h2>
       </div>
-
+ 
+ 
       <div class="flex items-center gap-2">
         <label for="sortSelect" class="font-serif font-semibold text-gray-800 text-[20px] sm:text-[15px] leading-none">Sort By:</label>
         <div class="relative flex items-center">
@@ -47,108 +55,200 @@
         </div>
       </div>
     </div>
-  
+ 
     <div id="resultsContainer" class="flex flex-col gap-4 w-full">
-
+ 
+ 
       <div class="position-section flex flex-col gap-1.5 w-full" data-position="President">
         <div class="border-l-4 border-red-800 pl-2.5">
           <h3 class="text-[25px] sm:text-[20px] font-serif font-bold text-gray-900 leading-tight">President</h3>
         </div>
-
+ 
+ 
         <div class="candidates-list flex flex-col gap-2 pl-3 w-full">
           <!-- Candidate 1 -->
-          <div class="candidate-row flex flex-col w-full" data-candidate-id="1">
-            <div class="flex justify-end items-center text-xs sm:text-sm font-serif font-semibold text-gray-700 leading-none mb-0.5">
-              <span id="percent">0%</span>
+          <div class="candidate-row flex flex-col w-full" data-candidate-id="1" data-candidate-name="Juan Dela Cruz">
+            <div class="flex justify-between items-center text-xs sm:text-sm font-serif font-semibold text-gray-700 leading-none mb-0.5">
+              <span class="candidate-name">••••••••</span>
+              <span class="candidate-percent">0%</span>
             </div>
             <div class="w-full bg-gray-400/60 h-3 sm:h-3.5 rounded-full overflow-hidden shadow-inner">
-              <div id="bar" class="bg-red-600 h-full rounded-full transition-all duration-500 ease-out w-0"></div>
+              <div class="candidate-bar bg-red-600 h-full rounded-full transition-all duration-500 ease-out w-0"></div>
             </div>
           </div>
-
-          <div class="mt-2 candidate-row flex flex-col w-full" data-candidate-id="2">
-            <div class="flex justify-end items-center text-xs sm:text-sm font-serif font-semibold text-gray-700 leading-none mb-0.5">
-              <span id="percent">0%</span>
+ 
+          <!-- Candidate 2 -->
+          <div class="mt-2 candidate-row flex flex-col w-full" data-candidate-id="2" data-candidate-name="Maria Santos">
+            <div class="flex justify-between items-center text-xs sm:text-sm font-serif font-semibold text-gray-700 leading-none mb-0.5">
+              <span class="candidate-name">••••••••</span>
+              <span class="candidate-percent">0%</span>
             </div>
             <div class="w-full bg-gray-400/60 h-3 sm:h-3.5 rounded-full overflow-hidden shadow-inner">
-              <div id="bar" class="bg-red-600 h-full rounded-full transition-all duration-500 ease-out w-0"></div>
+              <div class="candidate-bar bg-red-600 h-full rounded-full transition-all duration-500 ease-out w-0"></div>
             </div>
           </div>
         </div>
       </div>
-
+ 
+ 
       <div class="position-section flex flex-col mt-2 gap-1.5 w-full" data-position="Vice-President">
         <div class="border-l-4 border-red-800 pl-2.5">
           <h3 class="text-[25px] sm:text-[20px] font-serif font-bold text-gray-900 leading-tight">Vice-President</h3>
         </div>
-
+ 
+ 
         <div class="candidates-list flex flex-col gap-2 pl-3 w-full">
-        
-          <div class="candidate-row flex flex-col w-full" data-candidate-id="3">
-            <div class="flex justify-end items-center text-xs sm:text-sm font-serif font-semibold text-gray-700 leading-none mb-0.5">
-              <span id="percent">0%</span>
+ 
+          <div class="candidate-row flex flex-col w-full" data-candidate-id="3" data-candidate-name="Pedro Reyes">
+            <div class="flex justify-between items-center text-xs sm:text-sm font-serif font-semibold text-gray-700 leading-none mb-0.5">
+              <span class="candidate-name">••••••••</span>
+              <span class="candidate-percent">0%</span>
             </div>
             <div class="w-full bg-gray-400/60 h-3 sm:h-3.5 rounded-full overflow-hidden shadow-inner">
-              <div id="bar" class="bg-red-600 h-full rounded-full transition-all duration-500 ease-out w-0"></div>
+              <div class="candidate-bar bg-red-600 h-full rounded-full transition-all duration-500 ease-out w-0"></div>
             </div>
           </div>
-
-          
-          <div class="candidate-row mt-2 flex flex-col w-full" data-candidate-id="4">
-            <div class="flex justify-end items-center text-xs sm:text-sm font-serif font-semibold text-gray-700 leading-none mb-0.5">
-              <span id="percent">0%</span>
+ 
+ 
+          <div class="candidate-row mt-2 flex flex-col w-full" data-candidate-id="4" data-candidate-name="Ana Lim">
+            <div class="flex justify-between items-center text-xs sm:text-sm font-serif font-semibold text-gray-700 leading-none mb-0.5">
+              <span class="candidate-name">••••••••</span>
+              <span class="candidate-percent">0%</span>
             </div>
             <div class="w-full bg-gray-400/60 h-3 sm:h-3.5 rounded-full overflow-hidden shadow-inner">
-              <div id="bar" class="bg-red-600 h-full rounded-full transition-all duration-500 ease-out w-0"></div>
+              <div class="candidate-bar bg-red-600 h-full rounded-full transition-all duration-500 ease-out w-0"></div>
             </div>
           </div>
         </div>
       </div>
-
+ 
+ 
       <div class="position-section mt-2 flex flex-col gap-1.5 w-full" data-position="Secretary">
         <div class="border-l-4 border-red-800 pl-2.5">
           <h3 class="text-[25px] sm:text-[20px] font-serif font-bold text-gray-900 leading-tight">Secretary</h3>
         </div>
-
+ 
+ 
         <div class="candidates-list flex flex-col gap-2 pl-3 w-full">
-      
-          <div class="candidate-row flex flex-col w-full" data-candidate-id="5">
-            <div class="flex justify-end items-center text-xs sm:text-sm font-serif font-semibold text-gray-700 leading-none mb-0.5">
-              <span id="percent">0%</span>
+ 
+          <div class="candidate-row flex flex-col w-full" data-candidate-id="5" data-candidate-name="Carlos Tan">
+            <div class="flex justify-between items-center text-xs sm:text-sm font-serif font-semibold text-gray-700 leading-none mb-0.5">
+              <span class="candidate-name">••••••••</span>
+              <span class="candidate-percent">0%</span>
             </div>
             <div class="w-full bg-gray-400/60 h-3 sm:h-3.5 rounded-full overflow-hidden shadow-inner">
-              <div id="bar" class="bg-red-600 h-full rounded-full transition-all duration-500 ease-out w-0"></div>
+              <div class="candidate-bar bg-red-600 h-full rounded-full transition-all duration-500 ease-out w-0"></div>
             </div>
           </div>
-
-          <div class="candidate-row mt-2 flex flex-col w-full" data-candidate-id="6">
-            <div class="flex justify-end items-center text-xs sm:text-sm font-serif font-semibold text-gray-700 leading-none mb-0.5">
-              <span id="percent">0%</span>
+ 
+          <div class="candidate-row mt-2 flex flex-col w-full" data-candidate-id="6" data-candidate-name="Grace Uy">
+            <div class="flex justify-between items-center text-xs sm:text-sm font-serif font-semibold text-gray-700 leading-none mb-0.5">
+              <span class="candidate-name">••••••••</span>
+              <span class="candidate-percent">0%</span>
             </div>
             <div class="w-full bg-gray-400/60 h-3 sm:h-3.5 rounded-full overflow-hidden shadow-inner">
-              <div id="bar" class="bg-red-600 h-full rounded-full transition-all duration-500 ease-out w-0"></div>
+              <div class="candidate-bar bg-red-600 h-full rounded-full transition-all duration-500 ease-out w-0"></div>
             </div>
           </div>
-          <div class="candidate-row mt-2 flex flex-col w-full" data-candidate-id="6">
-            <div class="flex justify-end items-center text-xs sm:text-sm font-serif font-semibold text-gray-700 leading-none mb-0.5">
-              <span id="percent">0%</span>
+ 
+          <div class="candidate-row mt-2 flex flex-col w-full" data-candidate-id="7" data-candidate-name="Mark Chua">
+            <div class="flex justify-between items-center text-xs sm:text-sm font-serif font-semibold text-gray-700 leading-none mb-0.5">
+              <span class="candidate-name">••••••••</span>
+              <span class="candidate-percent">0%</span>
             </div>
             <div class="w-full bg-gray-400/60 h-3 sm:h-3.5 rounded-full overflow-hidden shadow-inner">
-              <div id="bar" class="bg-red-600 h-full rounded-full transition-all duration-500 ease-out w-0"></div>
+              <div class="candidate-bar bg-red-600 h-full rounded-full transition-all duration-500 ease-out w-0"></div>
             </div>
           </div>
-          <div class="candidate-row mt-2 flex flex-col w-full" data-candidate-id="6">
-            <div class="flex justify-end items-center text-xs sm:text-sm font-serif font-semibold text-gray-700 leading-none mb-0.5">
-              <span id="percent">0%</span>
+ 
+          <div class="candidate-row mt-2 flex flex-col w-full" data-candidate-id="8" data-candidate-name="Liza Wong">
+            <div class="flex justify-between items-center text-xs sm:text-sm font-serif font-semibold text-gray-700 leading-none mb-0.5">
+              <span class="candidate-name">••••••••</span>
+              <span class="candidate-percent">0%</span>
             </div>
             <div class="w-full bg-gray-400/60 h-3 sm:h-3.5 rounded-full overflow-hidden shadow-inner">
-              <div id="bar" class="bg-red-600 h-full rounded-full transition-all duration-500 ease-out w-0"></div>
+              <div class="candidate-bar bg-red-600 h-full rounded-full transition-all duration-500 ease-out w-0"></div>
             </div>
           </div>
         </div>
       </div>
-
+ 
+ 
     </div>
+ 
+ 
+  </main>
+ 
+  <script>
+    const STORAGE_KEYS = {
+      status: 'election_status',   // 'OPEN' | 'PAUSED' | 'CLOSED'
+      masked: 'names_masked'       // 'true' | 'false'
+    };
+    const MASK_CHAR = '••••••••';
+ 
+    function getElectionStatus() {
+      return localStorage.getItem(STORAGE_KEYS.status) || 'OPEN';
+    }
+ 
+    function getNamesMasked() {
+      const v = localStorage.getItem(STORAGE_KEYS.masked);
+      return v === null ? true : v === 'true'; // masked by default
+    }
+ 
+    // Names are revealed once the election is CLOSED, or if the admin has
+    // manually unmasked them ahead of time.
+    function isRevealed() {
+      if (getElectionStatus() === 'CLOSED') return true;
+      return !getNamesMasked();
+    }
+ 
+    function applyState() {
+      const status = getElectionStatus();
+      const revealed = isRevealed();
+ 
+      const banner = document.getElementById('statusBanner');
+      const bannerText = document.getElementById('statusBannerText');
+      const statusIcon = document.getElementById('statusIcon');
+ 
+      banner.classList.remove(
+        'bg-emerald-100', 'text-emerald-900', 'border-emerald-400',
+        'bg-amber-100', 'text-amber-900', 'border-amber-400',
+        'bg-gray-200', 'text-gray-800', 'border-gray-400'
+      );
+ 
+      if (status === 'CLOSED') {
+        bannerText.textContent = 'Election Ended \u2014 Official Results Revealed';
+        statusIcon.textContent = '✅';
+        banner.classList.add('bg-emerald-100', 'text-emerald-900', 'border-emerald-400');
+      } else if (revealed) {
+        bannerText.textContent = 'Voting in Progress \u2014 Names Revealed (Preview)';
+        statusIcon.textContent = '👁️';
+        banner.classList.add('bg-amber-100', 'text-amber-900', 'border-amber-400');
+      } else {
+        bannerText.textContent = 'Voting in Progress (Names Hidden)';
+        statusIcon.textContent = '🔒';
+        banner.classList.add('bg-gray-200', 'text-gray-800', 'border-gray-400');
+      }
+ 
+      document.querySelectorAll('.candidate-row').forEach((row) => {
+        const nameEl = row.querySelector('.candidate-name');
+        const realName = row.getAttribute('data-candidate-name');
+        if (!nameEl || !realName) return;
+        nameEl.textContent = revealed ? realName : MASK_CHAR;
+      });
+    }
+ 
+    // Fires in OTHER tabs/windows whenever admin-dashboard.html writes to
+    // localStorage — this is what gives us the "no refresh needed" sync.
+    window.addEventListener('storage', (event) => {
+      if (event.key === STORAGE_KEYS.status || event.key === STORAGE_KEYS.masked) {
+        applyState();
+      }
+    });
+ 
+    document.addEventListener('DOMContentLoaded', applyState);
+  </script>
+
 
   </main>
 
