@@ -8,7 +8,11 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
   <style>
+    body { font-family: 'Inter', sans-serif; }
+    .font-serif-title { font-family: 'Cinzel', serif; }
+    .font-mono-id { font-family: 'Space Mono', monospace; }
     input[type="time"]::-webkit-calendar-picker-indicator,
     input[type="date"]::-webkit-calendar-picker-indicator {
       cursor: pointer;
@@ -17,70 +21,63 @@
   </style>
 </head>
 
-<body class="min-h-screen w-full bg-[#8f0000] text-gray-800 font-sans antialiased flex flex-col overflow-y-auto">
+<body class="min-h-screen w-full bg-[#7a0000] text-gray-800 font-sans antialiased flex flex-col overflow-y-auto">
 
-  <!-- HEADER -->
-  <header class="sticky top-0 z-50 w-full bg-[#8f0000] border-b border-[#710000] py-5 px-3 flex items-center gap-3 shadow-md">
+  <!-- ==================== HEADER ==================== -->
+  <header class="sticky top-0 z-50 w-full bg-[#7a0000] border-b border-black/20 py-4 px-4 sm:px-8 flex items-center gap-3 shadow-md shrink-0">
     <div class="flex items-center gap-3">
-      <a href="Adviser.html" class="text-[#efefef] hover:opacity-80 transition shrink-0">
-        <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <a href="Adviser.html" class="text-white hover:opacity-80 transition shrink-0" aria-label="Back">
+        <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
           <path d="m12 19-7-7 7-7"></path>
           <path d="M19 12H5"></path>
         </svg>
       </a>
 
       <div class="w-11 h-11 shrink-0 overflow-hidden rounded-full">
-        <img src="image/logo.png" alt="User Profile" class="w-full h-full object-cover">
-      </div>
+  <img src="image/logo.png" alt="User Profile" class="w-full h-full object-cover">
+</div>
 
       <div class="flex flex-col">
-        <h2 class="text-lg sm:text-[23px] font-serif font-bold text-white leading-none">Adviser Dashboard</h2>
+        <h1 class="text-xl sm:text-2xl font-serif font-bold text-white leading-none">Adviser Dashboard</h1>
       </div>
     </div>
   </header>
 
-  <!-- MAIN WRAPPER -->
+  <!-- ==================== MAIN WRAPPER ==================== -->
   <main class="w-full max-w-[1400px] mx-auto flex flex-col md:flex-row gap-6 p-4 sm:p-6 min-h-screen pb-16">
 
-    <!-- 1. KALIWANG CONTAINER (May solid na light background tulad sa screenshot) -->
-    <div class="w-full min-w-0 md:flex-[2.5] bg-[#efefef] rounded-2xl sm:rounded-3xl shadow-2xl flex flex-col border border-[#efefef] order-1 overflow-hidden">
+    <!-- 1. KALIWANG CONTAINER (Election Management Control Panel) -->
+    <div class="w-full min-w-0 md:flex-[2.5] bg-[#efefef] rounded-2xl sm:rounded-3xl shadow-2xl flex flex-col border border-white/20 order-1 overflow-hidden">
       
       <!-- NAVIGATION TABS -->
-      <nav class="sticky top-0 z-30 w-full bg-[#efefef] py-3 px-3 sm:px-6 border-b border-[#efefef] flex items-center justify-center gap-4 sm:gap-8 shadow-md rounded-t-2xl sm:rounded-t-3xl overflow-x-auto whitespace-nowrap [ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-  
-  <!-- Candidate Management -->
-  <a href="Adviser.html" class="flex items-center gap-1.5 sm:gap-2 text-gray-700 hover:text-black font-serif text-xs sm:text-base shrink-0 pb-1.5 pr-4 sm:pr-0"">
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4 sm:w-5 sm:h-5 text-[#8f0000] shrink-0">
-      <path stroke-linecap="round" stroke-linejoin="round" d="M18 7.5v3m0 0v3m0-3h3m-3 0h-3m-2.25-4.125a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0ZM3 19.235v-.11a6.375 6.375 0 0 1 12.75 0v.109A12.318 12.318 0 0 1 9.374 21c-2.331 0-4.512-.645-6.374-1.766Z" />
-    </svg>
-    <span class="font-serif">Candidate Management</span>
-  </a>
+      <nav class="w-full bg-[#e8e6e6] pt-4 pb-3.5 px-6 border-b border-gray-300/80 flex items-center justify-center gap-8 sm:gap-12 shrink-0">
+        <a href="Adviser.html" class="flex items-center gap-2 text-slate-700 hover:text-black font-serif text-sm sm:text-base font-medium transition">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5 text-[#8f0000] shrink-0">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M18 7.5v3m0 0v3m0-3h3m-3 0h-3m-2.25-4.125a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0ZM3 19.235v-.11a6.375 6.375 0 0 1 12.75 0v.109A12.318 12.318 0 0 1 9.374 21c-2.331 0-4.512-.645-6.374-1.766Z" />
+          </svg>
+          <span>Candidate Management</span>
+        </a>
 
-  <a href="elecmanagement.html" class="flex items-center gap-1.5 sm:gap-2 text-gray-700 hover:text-black font-serif text-xs sm:text-base shrink-0 pb-1.5 pr-4 sm:pr-0">
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4 sm:w-5 sm:h-5 text-[#8f0000] shrink-0">
-      <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
-    </svg>
-    <span class="font-serif">Election Management</span>
-  </a>
-
-</nav>
+        <a href="elecmanagement.html" class="flex items-center gap-2 text-slate-900 hover:text-black font-serif text-sm sm:text-base font-bold transition">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5 text-[#8f0000] shrink-0">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+          </svg>
+          <span>Election Management</span>
+        </a>
+      </nav>
 
       <!-- CONTENT BODY -->
       <div class="p-6 sm:p-8 space-y-6">
-       
 
-        <div class="flex items-center justify-between flex-wrap gap-3">
-                    <h2 class="text-2xl font-bold font-serif-title tracking-wide">Election Control Panel</h2>
+        <div class="flex items-center justify-between flex-wrap gap-3 border-b border-gray-300/80 pb-3">
+          <h2 class="text-2xl font-bold font-serif-title tracking-wide text-gray-950">Election Control Panel</h2>
 
-
-                    <div id="statusPill"
-                        class="flex items-center gap-4 text-[#8f0000] px-4 py-2 text-xs sm:text-sm font-serif-title">
-                        <span class="text-[#710000]">Status: <strong id="statusText">OPEN</strong></span>
-                        <span class="opacity-50">|</span>
-                        <span class="text-[#710000]">Names: <strong id="maskedText">Masked</strong></span>
-                    </div>
-                </div>
-
+          <div id="statusPill" class="flex items-center gap-3 bg-white px-4 py-2 rounded-xl border border-gray-300 text-xs sm:text-sm font-serif-title shadow-sm">
+            <span class="text-gray-700">Status: <strong id="statusText" class="text-[#8f0000]">OPEN</strong></span>
+            <span class="text-gray-300">|</span>
+            <span class="text-gray-700">Names: <strong id="maskedText" class="text-[#8f0000]">Masked</strong></span>
+          </div>
+        </div>
 
         <!-- Maroon Control Box -->
         <form id="electionTimeForm" onsubmit="handleStartElection(event)"
@@ -155,141 +152,47 @@
 
     </div>
 
-    <!-- 2. KANANG CONTAINER (Live Results) -->
-   <div class="w-full md:w-72 bg-[#efefef] rounded-2xl sm:rounded-3xl p-3.5 sm:p-5 shadow-2xl shrink-0 flex flex-col border border-white/20 order-2 md:order-last md:sticky md:top-24 self-start">
-  
-  <div class="space-y-3 sm:space-y-4">
-    <h3 class="text-[20px] sm:text-[25px] font-serif font-bold text-gray-950 mb-2 sm:mb-3">Live Results</h3>
-
-    <!-- PRESIDENT -->
-    <div class="position-section flex flex-col gap-1.5 w-full" data-position="President">
-      <div class="pl-2.5">
-        <h3 class="text-[18px] sm:text-[20px] font-serif font-bold text-gray-900 leading-tight">President</h3>
+    <!-- 2. KANANG CONTAINER (Live Results Sidebar) -->
+    <aside class="w-full md:w-80 bg-[#efefef] rounded-2xl sm:rounded-3xl p-5 shadow-2xl shrink-0 flex flex-col border border-white/20 md:sticky md:top-24 self-start space-y-4 order-2">
+      
+      <div class="space-y-3">
+        <h3 class="text-2xl font-serif font-bold text-gray-950 leading-tight">Live Results</h3>
+        
+        <!-- Bars -->
+        <div id="dynamicSidebarPositions" class="flex flex-col gap-2"></div>
       </div>
 
-      <div class="candidates-list flex flex-col gap-2 pl-3 w-full">
-        <!-- Candidate 1 -->
-        <div class="candidate-row flex flex-col w-full" data-candidate-id="1">
-          <div class="flex justify-end items-center text-xs sm:text-sm font-serif font-semibold text-gray-700 leading-none mb-0.5">
-            <span id="percent-1">0%</span>
-          </div>
-          <div class="w-full bg-gray-400/60 h-3 sm:h-3.5 rounded-full overflow-hidden shadow-inner">
-            <div id="bar-1" class="bg-[#8f0000] h-full rounded-full transition-all duration-500 ease-out w-0"></div>
-          </div>
+      <!-- STATUS FOOTER -->
+      <div class="border-t border-gray-300 pt-3 mt-4 text-[13px] text-gray-800 space-y-1">
+        <h4 class="text-sm font-serif font-bold text-gray-950 mb-1">Status</h4>
+        <div class="flex justify-between font-medium">
+          <span>No.Voters:</span>
+          <span id="No.voters" class="text-gray-500 truncate max-w-[130px] text-right">Database not f...</span>
         </div>
-
-        <!-- Candidate 2 -->
-        <div class="candidate-row flex flex-col w-full" data-candidate-id="2">
-          <div class="flex justify-end items-center text-xs sm:text-sm font-serif font-semibold text-gray-700 leading-none mb-0.5">
-            <span id="percent-2">0%</span>
-          </div>
-          <div class="w-full bg-gray-400/60 h-3 sm:h-3.5 rounded-full overflow-hidden shadow-inner">
-            <div id="bar-2" class="bg-[#8f0000] h-full rounded-full transition-all duration-500 ease-out w-0"></div>
-          </div>
+        <div class="flex justify-between font-medium">
+          <span>Voted :</span>
+          <span id="Voted" class="text-gray-500 truncate max-w-[130px] text-right">0</span>
+        </div>
+        <div class="flex justify-between font-medium">
+          <span>No.Candidate:</span>
+          <span id="No.candidates" class="text-gray-500 truncate max-w-[130px] text-right">0</span>
         </div>
       </div>
-    </div>
 
-    <!-- VICE-PRESIDENT -->
-    <div class="position-section flex flex-col mt-2 gap-1.5 w-full" data-position="Vice-President">
-      <div class="pl-2.5">
-        <h3 class="text-[18px] sm:text-[20px] font-serif font-bold text-gray-900 leading-tight">Vice-President</h3>
-      </div>
-
-      <div class="candidates-list flex flex-col gap-2 pl-3 w-full">
-        <div class="candidate-row flex flex-col w-full" data-candidate-id="3">
-          <div class="flex justify-end items-center text-xs sm:text-sm font-serif font-semibold text-gray-700 leading-none mb-0.5">
-            <span id="percent-3">0%</span>
-          </div>
-          <div class="w-full bg-gray-400/60 h-3 sm:h-3.5 rounded-full overflow-hidden shadow-inner">
-            <div id="bar-3" class="bg-[#8f0000] h-full rounded-full transition-all duration-500 ease-out w-0"></div>
-          </div>
-        </div>
-
-        <div class="candidate-row flex flex-col w-full" data-candidate-id="4">
-          <div class="flex justify-end items-center text-xs sm:text-sm font-serif font-semibold text-gray-700 leading-none mb-0.5">
-            <span id="percent-4">0%</span>
-          </div>
-          <div class="w-full bg-gray-400/60 h-3 sm:h-3.5 rounded-full overflow-hidden shadow-inner">
-            <div id="bar-4" class="bg-[#8f0000] h-full rounded-full transition-all duration-500 ease-out w-0"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- SECRETARY -->
-    <div class="position-section mt-2 flex flex-col gap-1.5 w-full" data-position="Secretary">
-      <div class="pl-2.5">
-        <h3 class="text-[18px] sm:text-[20px] font-serif font-bold text-gray-900 leading-tight">Secretary</h3>
-      </div>
-
-      <div class="candidates-list flex flex-col gap-2 pl-3 w-full">
-        <div class="candidate-row flex flex-col w-full" data-candidate-id="5">
-          <div class="flex justify-end items-center text-xs sm:text-sm font-serif font-semibold text-gray-700 leading-none mb-0.5">
-            <span id="percent-5">0%</span>
-          </div>
-          <div class="w-full bg-gray-400/60 h-3 sm:h-3.5 rounded-full overflow-hidden shadow-inner">
-            <div id="bar-5" class="bg-[#8f0000] h-full rounded-full transition-all duration-500 ease-out w-0"></div>
-          </div>
-        </div>
-
-        <div class="candidate-row flex flex-col w-full" data-candidate-id="6">
-          <div class="flex justify-end items-center text-xs sm:text-sm font-serif font-semibold text-gray-700 leading-none mb-0.5">
-            <span id="percent-6">0%</span>
-          </div>
-          <div class="w-full bg-gray-400/60 h-3 sm:h-3.5 rounded-full overflow-hidden shadow-inner">
-            <div id="bar-6" class="bg-[#8f0000] h-full rounded-full transition-all duration-500 ease-out w-0"></div>
-          </div>
-        </div>
-        <div class="candidate-row flex flex-col w-full" data-candidate-id="6">
-          <div class="flex justify-end items-center text-xs sm:text-sm font-serif font-semibold text-gray-700 leading-none mb-0.5">
-            <span id="percent-6">0%</span>
-          </div>
-          <div class="w-full bg-gray-400/60 h-3 sm:h-3.5 rounded-full overflow-hidden shadow-inner">
-            <div id="bar-6" class="bg-[#8f0000] h-full rounded-full transition-all duration-500 ease-out w-0"></div>
-          </div>
-        </div>
-        <div class="candidate-row flex flex-col w-full" data-candidate-id="6">
-          <div class="flex justify-end items-center text-xs sm:text-sm font-serif font-semibold text-gray-700 leading-none mb-0.5">
-            <span id="percent-6">0%</span>
-          </div>
-          <div class="w-full bg-gray-400/60 h-3 sm:h-3.5 rounded-full overflow-hidden shadow-inner">
-            <div id="bar-6" class="bg-[#8f0000] h-full rounded-full transition-all duration-500 ease-out w-0"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </div>
-
-  <!-- STATUS FOOTER -->
-  <div class="border-t border-gray-400 pt-3 sm:pt-4 mt-4">
-    <h3 class="text-[15px] sm:text-[17px] font-serif font-bold text-gray-950 mb-1">Status</h3>
-    <div class="flex justify-between text-[13px] sm:text-[15px] text-gray-800 font-medium py-0.5">
-      <span>No.Voters:</span>
-      <span id="No.voters" class="truncate max-w-[120px] text-right">Database not found</span>
-    </div>
-    <div class="flex justify-between text-[13px] sm:text-[15px] text-gray-800 font-medium py-0.5">
-      <span>Voted :</span>
-      <span id="Voted" class="truncate max-w-[120px] text-right">Database not found</span>
-    </div>
-    <div class="flex justify-between text-[13px] sm:text-[15px] text-gray-800 font-medium py-0.5">
-      <span>No.Candidate:</span>
-      <span id="No.candidates" class="truncate max-w-[120px] text-right">Database not found</span>
-    </div>
-  </div>
-  
-
-</div>
+    </aside>
 
   </main>
 
+  <!-- ==================== JAVASCRIPT LOGIC ENGINE ==================== -->
   <script>
     const STORAGE_KEYS = {
       status: 'election_status',
-      masked: 'names_masked'
+      masked: 'names_masked',
+      ballot: 'ballot_config',
+      results: 'election_results'
     };
 
+    /* --- Election Controls --- */
     function getElectionStatus() {
       return localStorage.getItem(STORAGE_KEYS.status) || 'OPEN';
     }
@@ -301,11 +204,13 @@
 
     function setElectionStatus(status) {
       localStorage.setItem(STORAGE_KEYS.status, status);
+      window.dispatchEvent(new Event('storage'));
       refreshStatusUI();
     }
 
     function setNamesMasked(masked) {
       localStorage.setItem(STORAGE_KEYS.masked, masked ? 'true' : 'false');
+      window.dispatchEvent(new Event('storage'));
       refreshStatusUI();
     }
 
@@ -360,9 +265,106 @@
       setNamesMasked(!getNamesMasked());
     }
 
+    /* --- Live Results Sidebar Render Engine --- */
+    function getBallotState() {
+      try {
+        const raw = localStorage.getItem(STORAGE_KEYS.ballot);
+        if (raw) return JSON.parse(raw);
+      } catch (e) {
+        console.warn('Could not parse ballot_config', e);
+      }
+      return {
+        positions: [
+          { id: 'pos-pres', name: 'President', candidates: [] },
+          { id: 'pos-vp', name: 'Vice-President', candidates: [] },
+          { id: 'pos-sec', name: 'Senator', candidates: [] }
+        ]
+      };
+    }
+
+    function renderLiveSidebar() {
+      const state = getBallotState();
+      let tally = null;
+      try {
+        tally = JSON.parse(localStorage.getItem(STORAGE_KEYS.results));
+      } catch (e) {}
+
+      const sidebar = document.getElementById('dynamicSidebarPositions');
+      const votedCountEl = document.getElementById('Voted');
+      const candCountEl = document.getElementById('No.candidates');
+
+      let totalCandidateCount = 0;
+
+      if (sidebar) {
+        sidebar.innerHTML = (state.positions || []).map((pos, pIdx) => {
+          const posTally = (tally && tally.positions && tally.positions[pos.id]) ? tally.positions[pos.id] : null;
+
+          const candidateData = (pos.candidates || []).map(c => {
+            totalCandidateCount++;
+            return {
+              id: c.id,
+              name: c.name,
+              votes: (posTally && posTally.candidates && posTally.candidates[c.id]) ? posTally.candidates[c.id].votes : 0
+            };
+          });
+
+          const totalVotesInPos = candidateData.reduce((sum, c) => sum + c.votes, 0);
+
+          const barsHTML = candidateData.map(c => {
+            const percent = totalVotesInPos > 0 ? Math.round((c.votes / totalVotesInPos) * 100) : 0;
+            return `
+              <div class="candidate-row flex flex-col w-full" data-candidate-id="${escapeHtml(c.id)}">
+                <div class="flex justify-between items-center text-xs sm:text-sm font-serif font-semibold text-gray-800 leading-none mb-1">
+                  <span class="truncate pr-2">${escapeHtml(c.name)}</span>
+                  <span class="font-mono text-gray-900 shrink-0">${percent}%</span>
+                </div>
+                <div class="w-full bg-gray-400/60 h-3 sm:h-3.5 rounded-full overflow-hidden shadow-inner">
+                  <div class="bg-[#8f0000] h-full rounded-full transition-all duration-500 ease-out" style="width: ${percent}%;"></div>
+                </div>
+              </div>
+            `;
+          }).join('');
+
+          return `
+            <div class="position-section flex flex-col ${pIdx > 0 ? 'mt-2' : ''} gap-1.5 w-full" data-position="${escapeHtml(pos.name)}">
+              <div class="pl-1">
+                <h4 class="text-[18px] sm:text-[20px] font-serif font-bold text-gray-900 leading-tight">
+                  ${escapeHtml(pos.name)}
+                </h4>
+              </div>
+              <div class="candidates-list flex flex-col gap-2 pl-2 w-full">
+                ${barsHTML || '<div class="text-[11px] text-gray-400 italic pl-1">No candidates yet</div>'}
+              </div>
+            </div>
+          `;
+        }).join('');
+      }
+
+      // Update Footer
+      if (votedCountEl) votedCountEl.textContent = (tally && tally.totalScanned ? tally.totalScanned : 0).toLocaleString();
+      if (candCountEl) candCountEl.textContent = totalCandidateCount.toLocaleString();
+    }
+
+    function escapeHtml(str) {
+      return String(str || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+    }
+
+    window.addEventListener('storage', (e) => {
+      if (e.key === STORAGE_KEYS.ballot || e.key === STORAGE_KEYS.results) {
+        renderLiveSidebar();
+      }
+      if (e.key === STORAGE_KEYS.status || e.key === STORAGE_KEYS.masked) {
+        refreshStatusUI();
+      }
+    });
+
+    window.addEventListener('ballotUpdated', renderLiveSidebar);
+
     document.addEventListener('DOMContentLoaded', () => {
       lucide.createIcons();
       refreshStatusUI();
+      renderLiveSidebar();
+      setInterval(renderLiveSidebar, 2000);
     });
   </script>
 </body>
